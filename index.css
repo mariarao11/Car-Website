@@ -1,0 +1,105 @@
+body{
+    font-family: 'Franklin Gothic Small',  Arial;
+}
+h1{
+    text-align: center;
+}
+.toggle-bar{
+    display: inline-block;
+    position: relative;
+    background-color: white;
+    border-radius: 25px;
+    overflow: hidden;
+    font-size: 16px;
+    border: 1px solid gray;
+    margin: 2% 0 0 42%;
+    box-shadow: 0 4px 8px rgb(0, 0, 0, 0.1);
+}
+.toggle-bar input[type="radio"]{
+    display: none;
+}
+.toggle-bar label{
+    display: inline-block;
+    padding: 10px 20px;
+    position: relative;
+    cursor: pointer;
+    z-index: 2; 
+    text-align: center;
+    transition: color 0.3s;
+    color: black;
+}
+.toggle-bar .slider{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 50%;
+    background: linear-gradient(45deg, rgb(168, 26, 26), #6dd5ed);
+    border-radius: 25px;
+    transition: 0.3s;
+    z-index: 1;
+    box-shadow: 0 4px 8px rgb(0, 0, 0, 0.2);
+}
+input#new-cars:checked ~ .slider
+{
+    left: 0;
+}
+input#used-cars:checked ~ .slider
+{
+    left: 50%;
+}
+input#new-cars:checked ~ label[for="new-cars"]{
+    color: white;
+    font-weight: bold;
+}
+input#used-cars:checked ~ label[for="new-cars"]{
+    color: black;
+    font-weight: bold;
+}
+
+input#used-cars:checked ~ label[for="used-cars"]{
+    color: white;
+    font-weight: bold;
+}
+input#new-cars:checked ~ label[for="used-cars"]{
+    color: black;
+    font-weight: bold;
+}
+
+.Container {
+    display: none;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: repeat(4, 100px) ;
+    margin-top: 40px;
+    margin-left: 15%;
+    gap: 30px 150px;
+}
+
+.Container-1 {
+    display: grid;
+}
+
+.Container .item{
+    text-transform: uppercase;
+    font-weight: bold;
+    display: flex; 
+    border: 1px solid transparent;  
+    justify-content: center;
+    align-items: center;
+    width: 180%;
+    height: 60%; 
+    padding: 22px;
+    border-radius: 10px;
+    cursor: pointer;
+    gap: 15px;
+    box-shadow: 0 4px 8px rgb(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    background: linear-gradient(45deg,  #001f3f, #ffffff);
+}
+.Container .item img{
+    margin-left: 5px;
+}
+
+.Container .item:hover{
+    transform: scale(1.05);
+}
